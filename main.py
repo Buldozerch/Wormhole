@@ -1,7 +1,6 @@
 import random
 from loguru import logger
 
-import requests
 from faker import Faker
 import asyncio
 from asyncio import Semaphore
@@ -10,10 +9,10 @@ import aiohttp
 fake = Faker()
 
 proxy_file = 'proxy.txt'
-with open(proxy_file, 'r') as file:
+with open(proxy_file, 'w+') as file:
     proxys = file.read().split('\n')
 email_file = 'emails.txt'
-with open(email_file, 'r') as file:
+with open(email_file, 'w+') as file:
     emails = file.read().split('\n')
 logger.add(
     f'{"debug.log"}',
