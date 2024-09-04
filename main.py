@@ -9,10 +9,14 @@ import aiohttp
 fake = Faker()
 
 proxy_file = 'proxy.txt'
-with open(proxy_file, 'w+') as file:
+with open(proxy_file, 'a+'):
+    pass
+with open(proxy_file, 'r') as file:
     proxys = file.read().split('\n')
 email_file = 'emails.txt'
-with open(email_file, 'w+') as file:
+with open(email_file, 'a+'):
+    pass
+with open(email_file, 'r') as file:
     emails = file.read().split('\n')
 logger.add(
     f'{"debug.log"}',
